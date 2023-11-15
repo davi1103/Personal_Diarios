@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar entrada </title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<style>
+  body {
+      background-color: #ffffe0; /* Amarillo claro */
+  }
+</style>
+<body>
+    <header>
+
+      
+      
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: goldenrod;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="crear_entrada.html">
+                <span class="navbar-title">DIARIO PERSONAL</span>
+            </a>
+
+            <!-- Botón de Cerrar Sesión a la derecha -->
+            <div class="d-flex align-items-center">
+                <a href="index.html" class="btn btn-outline-light ms-auto btn-cerrar-sesion">Cerrar Sesión</a>
+            </div>
+        </div>
+    </nav>
+
+    <style>
+        .navbar-title {
+            color: white;
+            font-size: 24px; 
+            font-family: 'Georgia', sans-serif;
+            font-weight: bold;
+        }
+
+        .btn-cerrar-sesion {
+            box-shadow: 2px 2px 4px rgb(125, 124, 124); /* Sombra negra */
+            font-size: 16px;
+        }
+    </style>
+   <ol class="breadcrumb align-items-right custom-breadcrumb">
+    <li class="breadcrumb-item custom-breadcrumb-item">
+        <a href="crear_entrada.html" class="breadcrumb-link">
+            <i class="bi bi-arrow-left"></i> Regresar
+        </a>
+    </li>
+</ol>
+
+<style>
+  .custom-breadcrumb {
+      background-color: transparent; /* Elimina el fondo gris, haciendo el fondo transparente */
+      margin-top: 20px; /* Agrega un margen superior */
+      margin-bottom: 20px; /* Agrega un margen inferior */
+      padding-left: 20px; /* Ajusta el padding para no alinear demasiado a la izquierda */
+  }
+  
+  .breadcrumb-link {
+      color: black; /* Establece el color del texto a negro */
+      transition: color 0.3s ease; /* Transición suave para el efecto hover */
+  }
+  
+  .breadcrumb-link:hover {
+      color: orange; /* Cambia el color a naranja al pasar el cursor */
+  }
+  </style>
+    <div class="container my-4">
+      <div class="row">
+          <div class="col d-flex justify-content-center">
+              <div class="input-group" style="max-width: 500px;">
+                  <input type="text" class="form-control" placeholder="Buscar...">
+                  <button class="btn btn-danger" id="searchButton">Buscar</button>
+              </div>
+          </div>
+      </div>
+  </div>
+      </header> 
+
+
+
+    <!-- ___entradas agregadas___-->
+
+
+              
+        
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mb-4 mx-auto">
+          <div class="card" style="width: 100%;">
+            <div class="card-body">
+              <div class="mb-3">
+                <div class="mb-3 d-flex justify-content-between">
+                  <div>
+                    <label for="title_entrada" class="form-label"></label>
+                  </div>
+                  <div>
+                    <span>15/12/2023</span>
+                  </div>
+                </div>
+                <label for="" class="form-label" style="font-weight: bold;">Título:</label>
+                <input type="text" class="form-control" id="title_entrada" readonly value="Un Dia de Chelas" style="background-color: white; color: black;">
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label" style="font-weight: bold;">Descripción:</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" readonly style="background-color: white; color: black;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis aut quidem earum labore repudiandae nisi dolore ratione, pariatur voluptates? Rem dolorum fugiat quam quos nostrum, illum repellat nisi maiores et!</textarea>
+              </div>
+              <div class="md-3">
+                <label for="title_entrada" class="form-label" style="font-weight: bold;">Imágenes:</label>
+                <div class="img card">
+                  <center>
+                    <img src="img/logo user.png" class="images_entradas" alt="chelas">
+                    <img src="img/logo user.png" class="images_entradas" alt="chelas">
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="col-md-8 mb-4 mx-auto">
+          <div class="card" style="width: 100%;">
+            <div class="card-body">
+              <div class="mb-3">
+                <div class="mb-3 d-flex justify-content-between">
+                  <div>
+                    <label for="title_entrada" class="form-label"></label>
+                  </div>
+                  <div>
+                    <span>12/12/2023</span>
+                  </div>
+                </div>
+                <label for="" class="form-label" style="font-weight: bold;">Título:</label>
+                <input type="text" class="form-control" id="title_entrada2" readonly value="Un dia jalando INSO" style="background-color: white; color: black;">
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label" style="font-weight: bold;">Descripción:</label>
+                <textarea class="form-control" id="exampleFormControlTextarea2" rows="3" readonly style="background-color: white; color: black;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis aut quidem earum labore repudiandae nisi dolore ratione, pariatur voluptates? Rem dolorum fugiat quam quos nostrum, illum repellat nisi maiores et!</textarea>
+              </div>
+              <div class="md-3">
+                <label for="title_entrada" class="form-label" style="font-weight: bold;">Imágenes:</label>
+                <div class="img card">
+                  <center>
+                    <img src="img/logo user.png" class="images_entradas" alt="chelas">
+                    <img src="img/logo user.png" class="images_entradas" alt="chelas">
+                  </center>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+        <div class="container-fluid">
+            <footer class="py-3 my-4">
+                <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                    </ul>
+                <p class="text-center text-muted">© 2022 Company, Inc</p>
+            </footer>
+        </div>
+    </footer>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

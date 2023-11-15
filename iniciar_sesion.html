@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión </title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <style>
+            body {
+                background-image: url('img/f3.jpg');
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            
+            .background-opacity {
+                background-color: rgba(255, 255, 255, 0.5); /* Fondo blanco con opacidad */
+                padding: 20px;
+            }
+        </style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var campos = document.querySelectorAll("input[maxlength], textarea[maxlength]");
+        campos.forEach(function(campo) {
+            campo.addEventListener("input", function() {
+                var mensajeLimiteId = this.id + "Limite";
+                var mensajeLimite = document.getElementById(mensajeLimiteId);
+                if (this.value.length === parseInt(this.getAttribute("maxlength"))) {
+                    mensajeLimite.style.display = "block";
+                } else {
+                    mensajeLimite.style.display = "none";
+                }
+            });
+        });
+    });
+</script>
+</head>
+
+<body>
+    <header>
+        <!-- ___NAVAR___ -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-" style="background-color: goldenrod;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <span class="navbar-title">DIARIO PERSONAL</span>
+                </a>
+                
+                <style>
+                .navbar-title {
+                    color: white;
+                    font-size: 24px; 
+                    font-family: 'Georgia', sans-serif;
+                    font-weight: bold;
+                }
+                </style>
+            </div>
+        </nav>
+    </header>
+
+    <div class="background-opacity">
+    <div class="container-fluid">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb align-items-right custom-breadcrumb">
+                <li class="breadcrumb-item custom-breadcrumb-item">
+                    <a href="index.html" class="breadcrumb-link">
+                        <i class="bi bi-arrow-left"></i> Regresar
+                    </a>
+                </li>
+            </ol>
+        </nav>
+        
+        <style>
+        .custom-breadcrumb {
+            background-color: transparent; /* Elimina el fondo gris, haciendo el fondo transparente */
+            margin-top: 20px; /* Agrega un margen superior */
+            margin-bottom: 20px; /* Agrega un margen inferior */
+            padding-left: 20px; /* Ajusta el padding para no alinear demasiado a la izquierda */
+        }
+        
+        .breadcrumb-link {
+            color: black; /* Establece el color del texto a negro */
+            transition: color 0.3s ease; /* Transición suave para el efecto hover */
+        }
+        
+        .breadcrumb-link:hover {
+            color: orange; /* Cambia el color a naranja al pasar el cursor */
+        }
+        </style>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-4 custom-form-container">
+                    <h3>Iniciar Sesión</h3>
+                    <form onsubmit="event.preventDefault(); window.location='crear_entrada.html';">
+                        <div class="mb-3">
+                            <label for="correo" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="correo" name="correo"
+                                   pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" maxlength="50" required
+                                   title="Por favor, introduce una dirección de correo electrónico válida. Ejemplo: david@gmail.com, david@upao.edu.pe">
+                                   <small id="correoLimite" class="form-text text-muted" style="display: none;">Límite de caracteres alcanzado.</small>
+                        </div>
+                        <div class="mb-3 position-relative">
+                            <label for="contrasena" class="form-label">Ingresa tu contraseña</label>
+                            <input type="password" class="form-control" id="contrasena" name="contrasena" pattern="^(?=.*[a-z])(?=.*[A-Z]).{8,}$" maxlength="50" required>
+                            <span class="bi bi-eye-slash" id="togglePassword" style="cursor: pointer; position: absolute; top: 70%; right: 10px; transform: translateY(-50%);"></span>
+                            <small id="contrasenaLimite" class="form-text text-muted" style="display: none;">Límite de caracteres alcanzado.</small>
+                        </div>
+
+                <div class="mb-3">
+                    <center><img class="captcha" src="img/captcha.png" alt="" s><br>
+                        <button type="submit" class="btn btn-danger">Ingresar</button>
+                    </center>
+                </div>
+                </div>
+                                 
+
+                    </form>
+                    
+                </div>
+            </div>
+
+            <script>
+                document.getElementById("togglePassword").addEventListener('click', function (e) {
+                    const password = document.getElementById("contrasena");
+                    const type = password.getAttribute("type") === "password" ? "text" : "password";
+                    password.setAttribute("type", type);
+        
+                    // Cambia el ícono
+                    this.classList.toggle("bi-eye");
+                    this.classList.toggle("bi-eye-slash");
+                });
+            </script>
+        </div>
+        <style>
+            .custom-form-container {
+                border: 2px solid rgb(140, 140, 140); /* Borde gris */
+                border-radius: 15px; /* Bordes redondeados */
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+                background-color: #f2f2f2; /* Fondo gris */
+                padding: 20px; /* Relleno dentro del cuadro */
+            }
+        </style>
+    </div>
+
+    <footer>
+        <div class="container-fluid">
+            <footer class="py-3 my-4">
+              <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+              </ul>
+              <p class="text-center text-muted">© 2022 Company, Inc</p>
+            </footer>
+          </div>
+    </footer>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
